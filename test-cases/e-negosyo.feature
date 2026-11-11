@@ -10,21 +10,26 @@ Feature: E-Negosyo Page Navigation and Inquiry Submission
     Given the user is on the "https://www.multisyscorp.com/e-negosyo" page
     When the user clicks on the "Mail" Icon button
     Then the user should be redirected to the contact or inquiry form section
-    And input fields for Select Reason, Full Name, Email, Mobile Number, and Message should be displayed
+    And input fields for Select Reason dropdown, Full Name, Email, Mobile Number, and Message text area should be displayed
 
-  Scenario: Submit an inquiry with valid required details
-    Given the user is on the e-Negosyo inquiry form
-    When the user enters valid details in Select Reason, Full Name, Email, Mobile Number, and Message fields
-    And clicks the "Submit" button
-    Then a success confirmation message should appear indicating the inquiry was sent
-
-  Scenario: Attempt inquiry submission with missing mandatory fields
+  Scenario: Submit an inquiry with valid required details and privacy consent
     Given the user is on the E-Negosyo inquiry form
+    When the user selects a reason from the "Select Reason" dropdown
+    And enters valid details in Full Name, Email, and Mobile Number fields
+    And enters a message in the Message text area
+    And opens the Privacy Statement link
+    And ticks the check box inside the Privacy Statement dialog
+    And checks the "I agree with the privacy statement" check box on the inquiry form
+    And clicks the "Submit" button
+    Then the submit button will grayout for a brief moment
+
+    Scenario: Attempt inquiry submission with missing mandatory fields or unaccepted privacy statement
+    Given the user is on the e-Negosyo inquiry form
     When the user leaves the Email field blank and fills out other fields
     And clicks the "Submit" button
-    Then validation error messages should prompt the user to fill in the required fields
+    Then validation error messages "required" should prompt the user to fill in the required fields
 
-  Scenario: Verify mobile responsiveness of the E-Negosyo page
+    Scenario: Verify mobile responsiveness of the E-Negosyo page
     Given the user sets the browser viewport to mobile dimensions (375x812)
     When the user navigates to "https://www.multisyscorp.com/e-negosyo"
     Then the navigation menu should collapse into a hamburger menu
