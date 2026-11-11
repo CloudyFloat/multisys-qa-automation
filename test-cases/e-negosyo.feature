@@ -29,7 +29,7 @@ Feature: e-Negosyo Page Navigation and Inquiry Submission
     And clicks the "Submit" button
     Then validation error messages "required" should prompt the user to fill in the required fields
 
-    Scenario: Verify mobile responsiveness of the e-Negosyo page
+  Scenario: Verify mobile responsiveness of the e-Negosyo page
     Given the user sets the browser viewport to mobile dimensions (375x812)
     When the user navigates to "https://www.multisyscorp.com/e-Negosyo"
     Then the navigation menu should collapse into a hamburger menu
