@@ -21,7 +21,7 @@ Feature: e-Negosyo Page Navigation and Inquiry Submission
     And ticks the check box inside the Privacy Statement dialog
     And checks the "I agree with the privacy statement" check box on the inquiry form
     And clicks the "Submit" button
-    Then the submit button will grayout for a brief moment
+    Then the submit button should turn disabled briefly
 
   Scenario: Attempt inquiry submission with missing mandatory fields or unaccepted privacy statement
     Given the user is on the e-Negosyo inquiry form
