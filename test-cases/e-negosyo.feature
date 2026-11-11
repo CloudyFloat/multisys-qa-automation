@@ -23,7 +23,7 @@ Feature: e-Negosyo Page Navigation and Inquiry Submission
     And clicks the "Submit" button
     Then the submit button will grayout for a brief moment
 
-    Scenario: Attempt inquiry submission with missing mandatory fields or unaccepted privacy statement
+  Scenario: Attempt inquiry submission with missing mandatory fields or unaccepted privacy statement
     Given the user is on the e-Negosyo inquiry form
     When the user leaves the Email field blank and fills out other fields
     And clicks the "Submit" button
