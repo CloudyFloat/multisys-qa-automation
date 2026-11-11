@@ -4,17 +4,17 @@ Feature: E-Negosyo Page Navigation and Inquiry Submission
     Given the user opens a browser and navigates to "https://www.multisyscorp.com/e-negosyo"
     When the page is fully loaded
     Then the hero banner, service overview, and "Inquire Now" CTA buttons should be visible
-    And the page title should contain "E-Negosyo"
+    And the page title should contain "e-Negosyo - Digital Solutions for MSMEs"
 
   Scenario: Navigate to the inquiry form from E-Negosyo
     Given the user is on the "https://www.multisyscorp.com/e-negosyo" page
-    When the user clicks on the "Inquire Now" or "Get Started" button
+    When the user clicks on the "Mail" Icon button
     Then the user should be redirected to the contact or inquiry form section
-    And input fields for Name, Email, and Mobile Number should be displayed
+    And input fields for Select Reason, Full Name, Email, Mobile Number, and Message should be displayed
 
   Scenario: Submit an inquiry with valid required details
-    Given the user is on the E-Negosyo inquiry form
-    When the user enters valid details in Name, Email, and Mobile Number fields
+    Given the user is on the e-Negosyo inquiry form
+    When the user enters valid details in Select Reason, Full Name, Email, Mobile Number, and Message fields
     And clicks the "Submit" button
     Then a success confirmation message should appear indicating the inquiry was sent
 
